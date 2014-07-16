@@ -19,8 +19,9 @@
  * settings into the class constructor. Available options
  * are shown above the constructor method below.
  *
- * @author Josh Lockhart <info@slimframework.com>
- * @copyright 2012 Josh Lockhart
+ * @author      Josh Lockhart <info@slimframework.com>
+ * @copyright   2012 Josh Lockhart
+ * @version     0.1.0
  *
  * MIT LICENSE
  *
@@ -47,6 +48,11 @@ namespace Slim\Logger;
 
 class DateTimeFileWriter
 {
+    /**
+     * @const string
+     */
+    const VERSION = '0.1.0';
+
     /**
      * @var resource
      */
