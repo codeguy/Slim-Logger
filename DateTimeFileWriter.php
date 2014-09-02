@@ -73,9 +73,12 @@ class DateTimeFileWriter
      *
      * name_format:
      * (string) The log file name format; parsed with `date()`.
+     * 
+     * date_format:
+     * (string) The log message date format; parsed with `date()`.
      *
      * extension:
-     * (string) The file extention to append to the filename`.     
+     * (string) The file extension to append to the filename`.     
      *
      * message_format:
      * (string) The log message format; available tokens are...
@@ -92,6 +95,7 @@ class DateTimeFileWriter
         $this->settings = array_merge(array(
             'path' => './logs',
             'name_format' => 'Y-m-d',
+            'date_format' => 'c',
             'extension' => 'log',
             'message_format' => '%label% - %date% - %message%'
         ), $settings);
@@ -133,7 +137,7 @@ class DateTimeFileWriter
             '%message%'
         ), array(
             $label,
-            date('c'),
+            date($this->settings['date_format']),
             (string)$object
         ), $this->settings['message_format']);
 
