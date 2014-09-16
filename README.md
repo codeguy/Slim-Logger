@@ -30,7 +30,12 @@ $ php composer.phar install
 require 'vendor/autoload.php';
 
 $app = new \Slim\Slim(array(
-    'log.writer' => new \Slim\Logger\DateTimeFileWriter()
+    'log.writer' => new \Slim\Logger\DateTimeFileWriter(array(
+        'path' => './logs',
+        'name_format' => 'Y-m-d',
+        'extension' => 'log',
+        'message_format' => '%label% - %date% - %message%'
+    ))
 ));
 ```
 
