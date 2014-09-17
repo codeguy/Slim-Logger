@@ -30,6 +30,26 @@ $ php composer.phar install
 require 'vendor/autoload.php';
 
 $app = new \Slim\Slim(array(
+    'log.writer' => new \Slim\Logger\DateTimeFileWriter()
+));
+```
+Additionally, you can define settings by passing an associative array as constructor argument. Available settings are:
+
+* `path` (string). The relative or absolute filesystem path to a writable directory.
+* `name_format` (string). The log file name format; parsed with `date()`.
+* `extension` (string). The file extention to append to the filename`.
+* `message_format` (string). The log message format; available tokens are:
+  * `%label%`: replaced with the log message level (e.g. FATAL, ERROR, WARN).
+  * `%date%`: replaced with a ISO8601 date string for current timezone.
+  * `%message%`: replaced with the log message, coerced to a string.
+
+The default settings are described in example below:
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$app = new \Slim\Slim(array(
     'log.writer' => new \Slim\Logger\DateTimeFileWriter(array(
         'path' => './logs',
         'name_format' => 'Y-m-d',
