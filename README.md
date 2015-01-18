@@ -23,7 +23,9 @@ Then run the following composer command:
 $ php composer.phar install
 ```
 
-### How to use
+### DateTimeFileWriter
+
+#### How to use
     
 ```php
 <?php
@@ -31,6 +33,19 @@ require 'vendor/autoload.php';
 
 $app = new \Slim\Slim(array(
     'log.writer' => new \Slim\Logger\DateTimeFileWriter()
+));
+```
+
+### HtmlFileWriter
+
+#### How to use
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$app = new \Slim\Slim(array(
+    'log.writer' => new \Slim\Logger\HtmlFileWriter()
 ));
 ```
 
