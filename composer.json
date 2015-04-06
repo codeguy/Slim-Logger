@@ -1,14 +1,5 @@
 {
-    "name": "slim/logger",
-    "description": "Slim Framework logger",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
-        }
-    ],
+    "name": "hgati/slim-logger",
     "require": {
         "php": ">=5.3.0",
         "slim/slim": ">=2.4.0"
