@@ -148,6 +148,6 @@ class DateTimeFileWriter
         }
 
         //Output to resource
-        fwrite($this->resource, $message . PHP_EOL);
+        fwrite($this->resource, $message . PHP_EOL . PHP_EOL);
     }
 }
